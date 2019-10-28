@@ -7,7 +7,7 @@ public class BlockSpawner : MonoBehaviour
     [SerializeField]
     private Block blockPrefab;
 
-    private int playWidth = 8;
+    private int playWidth = 18;
     private float distanceBetweenBlock = 0.7f;
     private int rowsSpawned;
 

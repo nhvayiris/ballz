@@ -1,16 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
 
 public class Gameover : MonoBehaviour
 {
-    private void OnCollisionEnter2D(Collision2D collision)
+    
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.collider.GetComponent<Block>() != null)
+        if (collision.gameObject.tag == "Touchline")
         {
             GameManager.Instance.GameOver();
         }
     }
-
 }

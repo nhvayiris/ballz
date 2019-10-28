@@ -38,5 +38,25 @@ public class Block : MonoBehaviour
     {
         hitsRemaining = hits;
         UpdateVisualState();
-    } 
+    }
+
+    /*private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Touchline")
+        {
+            Debug.Log("You Touch line :c");
+            GameManager.Instance.GameOver();
+        }
+    }*/
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Touchline")
+        {
+            Debug.Log("You Touch line :c");
+            GameManager.Instance.GameOver();
+        }
+    }
 }
+
+

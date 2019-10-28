@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     public bool isGameOver { get; private set; }
     public float restartDelay = 2f;
 
+    public GameObject gameOver;
+
 
     public void Awake()
     {
@@ -29,6 +31,7 @@ public class GameManager : MonoBehaviour
         if (!isGameOver)
         {
             isGameOver = true;
+            gameOver.SetActive(true);
 
             Debug.Log("Game Over :c");
 
@@ -39,6 +42,6 @@ public class GameManager : MonoBehaviour
 
     void Restart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
